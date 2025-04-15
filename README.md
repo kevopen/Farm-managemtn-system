@@ -1,51 +1,120 @@
-# Farming Management System
+# Farm Management System
 
-This project can be used as a starting point to create your own Vaadin application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
+A modern, web-based Farm Management System built with Vaadin and Firebase integration. This application helps farmers and agricultural businesses manage their farm operations efficiently.
 
-## Running the application
+## Features
 
-Open the project in an IDE. You can download the [IntelliJ community edition](https://www.jetbrains.com/idea/download) if you do not have a suitable IDE already.
-Once opened in the IDE, locate the `Application` class and run the main method using "Debug".
+- User Authentication with Firebase
+- Dashboard with farm overview
+- Inventory management for:
+  - Livestock
+  - Crops
+  - Equipment
+  - Supplies
+- Task scheduling and management
+- Financial tracking and reporting
+- Weather integration
+- Mobile-responsive design
 
-For more information on installing in various IDEs, see [how to import Vaadin projects to different IDEs](https://vaadin.com/docs/latest/getting-started/import).
+## Technology Stack
 
-If you install the Vaadin plugin for IntelliJ, you should instead launch the `Application` class using "Debug using HotswapAgent" to see updates in the Java code immediately reflected in the browser.
+- Frontend: Vaadin Flow (Java)
+- Backend: Spring Boot
+- Database: Firebase Realtime Database
+- Authentication: Firebase Auth
+- Build Tool: Maven
+- Java Version: 17 or later
 
-## Deploying to Production
+## Prerequisites
 
-The project is a standard Maven project. To create a production build, call 
+Before you begin, ensure you have the following installed:
+- JDK 17 or later
+- Node.js 18 or later
+- Maven 3.8+
+- A Firebase project with Realtime Database enabled
 
+## Setup
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/farm-management-system.git
+cd farm-management-system
 ```
-./mvnw clean package -Pproduction
+
+2. Firebase Configuration:
+   - Create a new Firebase project at [Firebase Console](https://console.firebase.google.com)
+   - Generate a new private key for service account from Project Settings > Service Accounts
+   - Save the generated JSON file as `firebase-service-account.json` in `src/main/resources/`
+   - Create `application.properties` in `src/main/resources/` with your Firebase configuration
+
+Example `application.properties`:
+```properties
+firebase.database.url=your-database-url
+firebase.storage.bucket=your-storage-bucket
 ```
 
-If you have Maven globally installed, you can replace `./mvnw` with `mvn`.
-
-This will build a JAR file with all the dependencies and front-end resources,ready to be run. The file can be found in the `target` folder after the build completes.
-You then launch the application using 
-```
-java -jar target/farmingmanagementsystem-1.0-SNAPSHOT.jar
+3. Install dependencies and build:
+```bash
+mvn clean install
 ```
 
-## Project structure
+## Running the Application
 
-- `MainLayout.java` in `src/main/java` contains the navigation setup (i.e., the
-  side/top bar and the main menu). This setup uses
-  [App Layout](https://vaadin.com/docs/components/app-layout).
-- `views` package in `src/main/java` contains the server-side Java views of your application.
-- `views` folder in `src/main/frontend` contains the client-side JavaScript views of your application.
-- `themes` folder in `src/main/frontend` contains the custom CSS styles.
+1. Start the development server:
+```bash
+mvn spring-boot:run
+```
 
-## Useful links
+2. Open your browser and navigate to:
+```
+http://localhost:8080
+```
 
-- Read the documentation at [vaadin.com/docs](https://vaadin.com/docs).
-- Follow the tutorial at [vaadin.com/docs/latest/tutorial/overview](https://vaadin.com/docs/latest/tutorial/overview).
-- Create new projects at [start.vaadin.com](https://start.vaadin.com/).
-- Search UI components and their usage examples at [vaadin.com/docs/latest/components](https://vaadin.com/docs/latest/components).
-- View use case applications that demonstrate Vaadin capabilities at [vaadin.com/examples-and-demos](https://vaadin.com/examples-and-demos).
-- Build any UI without custom CSS by discovering Vaadin's set of [CSS utility classes](https://vaadin.com/docs/styling/lumo/utility-classes). 
-- Find a collection of solutions to common use cases at [cookbook.vaadin.com](https://cookbook.vaadin.com/).
-- Find add-ons at [vaadin.com/directory](https://vaadin.com/directory).
-- Ask questions on [Stack Overflow](https://stackoverflow.com/questions/tagged/vaadin) or join our [Forum](https://vaadin.com/forum).
-- Report issues, create pull requests in [GitHub](https://github.com/vaadin).
+## Demo Data
+
+The application comes with demo data for testing purposes. When you first run the application, sample data will be automatically populated, including:
+- Demo user accounts
+- Sample farm inventory
+- Example tasks and schedules
+- Test financial records
+
+Demo login credentials:
+- Email: demo@example.com
+- Password: demo123
+
+## Security Note
+
+This project includes sensitive configuration files that are not tracked in version control:
+- Firebase service account JSON
+- Application properties with configuration
+- Environment variables
+
+Make sure to:
+1. Never commit sensitive files to version control
+2. Keep your Firebase credentials secure
+3. Use environment variables for production deployments
+
+## Development
+
+The project uses standard Maven project structure:
+- `src/main/java`: Java source files
+- `src/main/resources`: Configuration files
+- `frontend/`: Vaadin frontend resources
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Acknowledgments
+
+- Built with [Vaadin](https://vaadin.com/)
+- Firebase integration for real-time data management
+- Original template from Vaadin start.vaadin.com
