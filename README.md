@@ -79,8 +79,8 @@ The application comes with demo data for testing purposes. When you first run th
 - Test financial records
 
 Demo login credentials:
-- Email: demo@example.com
-- Password: demo123
+- Email: admin@farmer.com
+- Password: 123456
 
 ## Security Note
 
