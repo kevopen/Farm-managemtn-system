@@ -6,7 +6,7 @@ import java.net.URL;
 
 public class FirebaseAuthREST {
 
-    private static final String FIREBASE_API_KEY = "AIzaSyCxTZWB4e4HB_tURD0o-ors6tqOsm_OpIw"; // Replace with your Firebase Web API Key
+    private static final String FIREBASE_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"; // Replace with your Firebase Web API Key
 
     public static boolean verifyUser(String email, String password) {
         try {
